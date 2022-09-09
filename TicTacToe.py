@@ -34,29 +34,29 @@ def check_winner(player_no):
 
 def check_tie(lst):
 	if len(set(lst)) == 2:
-		print "Tie game ;)"
+		print ("Tie game ;)")
 		return True
 	else : pass
 
 def print_gameboard():
-	print '''
+	print ('''
 	Tic Tac Toe Game
 	__{a}__|__{b}__|__{c}__
 	__{d}__|__{e}__|__{f}__
 	  {g}  |  {h}  |  {i}
-	'''.format(a=one, b=two, c=three, d=four, e=five, f=six, g=seven, h=eight, i=nine)
+	'''.format(a=one, b=two, c=three, d=four, e=five, f=six, g=seven, h=eight, i=nine))
 
 while True:
 	print_gameboard()
 
 	if check_winner(player2_mark): 
-		print "Player 2 wins!!!"
+		print ("Player 2 wins!!!")
 		break
 	while True:
 		try :
-			player_1_choice = int(raw_input('Player 1 (X): Please mark a spot with the number of your choice: '))
+			player_1_choice = int(input('Player 1 (X): Please mark a spot with the number of your choice: '))
 		except : 
-			print "------Not a valid selection. Please try again-----"
+			print ("------Not a valid selection. Please try again-----")
 			continue
 
 		if player_1_choice == 1 and one != player1_mark and one != player2_mark: one = player1_mark
@@ -69,23 +69,23 @@ while True:
 		elif player_1_choice == 8 and eight != player1_mark and eight != player2_mark: eight = player1_mark
 		elif player_1_choice == 9 and nine != player1_mark and nine != player2_mark: nine = player1_mark
 		else : 
-			print "\n------Not a valid selection. Please try again-----"
+			print ("\n------Not a valid selection. Please try again-----")
 			continue
 		break
 
 	print_gameboard()
 
 	if check_winner(player1_mark): 
-		print "Player 1 wins!!!"
+		print ("Player 1 wins!!!")
 		break
 	#list to check for ties with set()
 	numlst = [one, two, three, four, five, six, seven, eight, nine]
 	if check_tie(numlst) : break
 	while True:
 		try :
-			player_2_choice = int(raw_input('Player 2 (O): Please mark a spot with the number of your choice: '))
+			player_2_choice = int(input('Player 2 (O): Please mark a spot with the number of your choice: '))
 		except : 
-			print "------Not a valid selection. Please try again-----"
+			print ("------Not a valid selection. Please try again-----")
 			continue
 
 		if player_2_choice == 1 and one != player1_mark and one != player2_mark: one = player2_mark
@@ -98,8 +98,8 @@ while True:
 		elif player_2_choice == 8 and eight != player1_mark and eight != player2_mark: eight = player2_mark
 		elif player_2_choice == 9 and nine != player1_mark and nine != player2_mark: nine = player2_mark
 		else : 
-			print "\n------Not a valid selection. Please try again-----"
+			print ("\n------Not a valid selection. Please try again-----")
 			continue
 		break
 
-print "Game Over"
+print ("Game Over")
